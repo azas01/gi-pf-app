@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { Layout } from 'antd';
+import AlbumList from './pages/AlbumList';
+import AlbumDetail from './pages/AlbumDetail';
+import UserList from './pages/UserList';
+import UserDetail from './pages/UserDetail';
 
-function App() {
-  const [count, setCount] = useState(0)
+const { Header, Content } = Layout;
 
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Layout style={{ minHeight: '100vh' }}>
+      <Header style={{ background: 'white'}}>
+        GI Product Frontend
+      </Header>
+      <Content style={{ padding: 24 }}>
+        <Routes>
+          <Route path="/" element={<Navigate to="/albums" />} />
+          <Route path="/albums" element={<AlbumList />} />
+          <Route path="/albums/:id" element={<AlbumDetail />} />
+          <Route path="/users" element={<UserList />} />
+          <Route path="/users/:id" element={<UserDetail />} />
+        </Routes>
+      </Content>
+    </Layout>
+  );
 }
-
-export default App
