@@ -1,8 +1,7 @@
-import React from 'react';
 import { Table, Avatar, Spin, Button } from 'antd';
 import { EyeOutlined } from '@ant-design/icons';
 import { useQuery } from '@tanstack/react-query';
-import { api, avatarUrl } from '../services/api';
+import { api } from '../services/api';
 import { Link } from 'react-router-dom';
 import type { User } from '../types';
 import { getAvatarColor, getInitials } from '../services/avatar';
@@ -40,9 +39,6 @@ export default function UserList() {
 			title: 'Name',
 			dataIndex: 'name',
 			key: 'name',
-			render: (name: string, record: User) => (
-					<Link to={`/users/${record.id}`}>{name}</Link>
-			),
 		},
 
     {

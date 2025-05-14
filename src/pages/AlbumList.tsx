@@ -1,22 +1,18 @@
-import React from 'react';
 import { Table, Avatar, Button, Spin } from 'antd';
 import { EyeOutlined } from '@ant-design/icons';
-import { keepPreviousData, useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { api } from '../services/api';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import type { Album, User } from '../types';
-// import './AlbumList.css';
 import { getAvatarColor, getInitials } from '../services/avatar';
 
 export default function AlbumList() {
   const [search] = useSearchParams();
   const navigate = useNavigate();
 
-  // URL query params
   const current = Number(search.get('current') ?? 1);
   const pageSize = Number(search.get('pageSize') ?? 10);
 
-  // Fetch paginated albums
   const {
     data: albums = [],
     isLoading: isAlbumsLoading,
@@ -29,7 +25,6 @@ export default function AlbumList() {
     placeholderData: (previousData) => previousData
   });
 
-  // Fetch all users once
   const {
     data: users = [],
     isLoading: isUsersLoading,

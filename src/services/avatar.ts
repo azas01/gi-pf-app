@@ -1,4 +1,3 @@
-// src/services/avatar.ts
 const avatarColors = [
   '#d81b60', '#efebe9', '#1565c0', '#651fff', '#ffc400', '#bdbdbd', '#08acf2','#673ab7', '#d1c4e9', '#faab96'
 ];
