@@ -12,8 +12,17 @@ A web application built with React and TypeScript that displays albums and user 
    cd gi-pf-app
 3. Install dependencies:
    ```bash
-   npm I
+   npm i
 4. Start the development server:
    ```bash
    npm run dev
   Then open your browser and go to: http://localhost:5173
+
+## Technologies Used
+- React
+- TypeScript
+- Vite
+- Ant Design
+- React Router
+- @tanstack/react-query
+- Axios
