@@ -26,3 +26,6 @@ A web application built with React and TypeScript that displays albums and user 
 - React Router
 - @tanstack/react-query
 - Axios
+
+## License
+This project is licensed under the MIT License.
