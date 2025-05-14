@@ -46,7 +46,7 @@ export default function App() {
           />
         </Link>
       </div>
-      <Layout>
+      <Layout style={{ minHeight: '100vh'}}>
         <Sider
           collapsible
           collapsed={collapsed}
@@ -78,7 +78,7 @@ export default function App() {
           </div>
         </Sider>
 
-        <Layout className="app-main">
+        <Layout>
           <Content className="app-content">
             {isDetail && (
               <div className="page-header">
